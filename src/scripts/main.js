@@ -6,5 +6,7 @@ document.querySelectorAll('table tr').forEach((row) => {
   const copy = secondCell.cloneNode(true);
   const cells = row.cells;
 
-  row.insertBefore(copy, cells[cells.length - 1]);
+  if (cells.length >= 2) {
+    row.insertBefore(copy, cells[cells.length - 1]);
+  }
 });
